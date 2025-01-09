@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+            div{
+                height: 100px;
+                width: 100px;
+                background-color: rgb(84, 21, 220);
+                transition: all 1s ease;
+            }
+            /* div:hover{
+                height: 70px;
+                width: 150px;
+                transform: scale(1) rotate(300deg);
+            } */
+        </style>
+    </head>
+    <body>
+        <div id="mydiv"></div>
+        <script>
+            let div=document.getElementById("mydiv");
+            div.addEventListener("mouseenter",rotate);
+            
+            function rotate(){
+                div.style.transform="scale(1.5) rotate(300deg)";
+            }
+            div.addEventListener("mouseleave",reset);
+            function reset(){
+                div.style.transform="rotate(0deg)";
+
+            }
+        </script>
+    </body>
+
+</html>

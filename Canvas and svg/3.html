@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body >
+        <div id="mydiv" style="background-color: red; height: 100px; width: 100px;" onmouseover="changeColor()"></div>
+
+        <script>
+            function changeColor(){
+                let div=document.getElementById("mydiv");
+                div.style.height="100px";
+                div.style.width="100px";
+                div.style.backgroundColor="blue";
+                div.style.transitionProperty="background-color";
+                div.style.transitionDuration="15s";
+                div.style.transitionTimingFunction="ease";
+                
+                // div.style.transition = "background-color 15s ease";
+            }
+        </script>
+    </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+    </style>
+</head>
+<body onload="changeColor()">
+    <div id="mydiv" style="background-color: red;"></div>
+
+    <script>
+        function changeColor(){
+            let div = document.getElementById("mydiv");
+            div.style.height = "100px";
+            div.style.width = "100px";
+            div.style.backgroundColor = "blue";
+            div.style.transition = "background-color 15s ease";
+        }
+    </script>
+</body>
+</html> -->

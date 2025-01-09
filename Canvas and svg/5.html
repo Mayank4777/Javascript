@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* #mydiv {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: background-color 10s ease;
+        } */
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: background-color 5s linear;
+            animation: colorTransition 10s infinite;
+        }
+/* 
+        @keyframes colorTransition {
+            0% { background-color: red; }
+            25% { background-color: pink; }
+            50% { background-color: blue; }
+            75% { background-color: cyan; }
+            100% { background-color: red; }
+        } */
+    </style>
+</head>
+<body onload="changeColor()">
+    <div id="mydiv"></div>
+
+    <script>
+
+        // Function to trigger the animation
+        // function changeColor() {
+        //     // Get the div element
+        //     let div = document.getElementById("mydiv");
+        //     // Add a CSS class to start the animation
+        //     div.classList.add("animate-colorTransition");
+        // }
+        function changeColor(){
+            let div = document.getElementById("mydiv");
+            setTimeout(function() {
+                div.style.backgroundColor = "green";
+            }, 1000); // Change to green after 1 second
+
+            setTimeout(function() {
+                div.style.backgroundColor = "blue";
+            }, 4000); // Change to blue after 4 seconds
+
+            setTimeout(function() {
+                div.style.backgroundColor = "cyan";
+            }, 5000); // Change to cyan after 7 seconds
+        }
+    </script>
+</body>
+</html>

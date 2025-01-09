@@ -1,0 +1,85 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <canvas id="mycanvas" height="300px" width="300px" style="border: 1px solid black;"></canvas>
+        <canvas id="canvas" height="300px" width="300px" style="border: 1px solid black;"></canvas>
+        <canvas id="canvas1" height="300px" width="300px" style="border: 1px solid black;"></canvas>
+    </body>
+    <script>
+        let a=document.getElementById("mycanvas");
+        let ctx=a.getContext("2d");
+        ctx.strokeStyle="red";
+
+        // ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(300,300);
+        // ctx.stroke();
+
+        ctx.moveTo(150,0);
+        ctx.lineTo(300,150);
+        ctx.stroke();
+
+        ctx.moveTo(0,150);
+        ctx.lineTo(150,300);
+        // ctx.stroke();
+
+        ctx.moveTo(150,300);
+        ctx.lineTo(300,150);
+        // ctx.stroke();
+
+        ctx.moveTo(0,150);
+        ctx.lineTo(150,0);
+        // ctx.stroke();
+
+        ctx.moveTo(0,300);
+        ctx.lineTo(300,0);
+        // ctx.stroke();
+
+        ctx.moveTo(0,150);
+        ctx.lineTo(300,150);
+        // ctx.stroke();
+
+        ctx.moveTo(150,0);
+        ctx.lineTo(150,300);
+        ctx.stroke();
+
+        let b=document.getElementById("canvas");
+        let c=b.getContext("2d");
+
+        c.beginPath();
+        c.arc(150,150,50,0,Math.PI*2);
+        c.strokeStyle="black";
+        c.stroke();
+        c.beginPath();
+        c.arc(150,150,30,0,Math.PI*2);
+        c.strokeStyle="black";
+        c.stroke();
+
+        let b1=document.getElementById("canvas1");
+        let c1=b1.getContext("2d");
+
+        c1.rect(5,5,90,290);
+        c1.strokeStyle="black";
+        c1.stroke();
+        c1.rect(105,5,90,290);
+        c1.strokeStyle="black";
+        c1.stroke();
+        c1.rect(205,5,90,290);
+        c1.strokeStyle="black";
+        c1.stroke();
+        c1.rect(5,100,90,90);
+        c1.strokeStyle="black";
+        c1.stroke();
+        c1.rect(105,100,90,90);
+        c1.strokeStyle="black";
+        c1.stroke();
+        c1.rect(205,100,90,90);
+        c1.strokeStyle="black";
+        c1.stroke();
+
+
+
+    </script>
+</html>

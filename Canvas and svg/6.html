@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            animation: colorTransition 15s infinite, moveTransition 15s infinite;
+        }
+
+        @keyframes colorTransition {
+            0% { background-color: red; }
+            25% { background-color: green; }
+            50% { background-color: blue; }
+            75% { background-color: cyan; }
+            100% { background-color: red; }
+        }
+
+        @keyframes moveTransition {
+            0% { left: 0; top: 0; }
+            20% { left: 100px; top: 0; }
+            40% { left: 100px; top: 100px; }
+            60% { left: 0; top: 100px; }
+            80% { left: -100px; top: 0; }
+            100% { left: 0; top: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <input type="button" onclick="startAnimations(true)" value="Start Animations">
+    <script>
+        // Function to trigger the animation
+        function startAnimations() {
+            // Get the div element
+            let div = document.getElementById("mydiv");
+            // Add a CSS class to start the animation
+            div.classList.add("animate-color-transition", "animate-move-transition");
+        }
+    </script>
+
+    <script>
+        // Trigger animations when the page is loaded
+        window.onload = function() {
+            startAnimations();
+        };
+    </script>
+</body>
+</html>
