@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>form 1</title>
+        
+        <style>
+            form{
+                background-color: white;
+                height: px;
+                width: 70%;
+                margin: 50px;
+                padding: 30px;
+                border: 2px solid black;
+                box-shadow: 5px  5px 10px grey;
+                border-radius: 10px;
+                font-size: 20px;
+            }
+            .box{
+                height: 30px;
+                border-radius: 10px;
+                border: none;
+                width: 70%;
+                background-color:  rgba(211, 211, 211, 0.692);
+            }
+
+            #btn{
+                height: 30px;
+                border-radius: 10px;
+                border: none;
+                width: 70%;
+                background-color:  rgba(211, 211, 211, 0.692);
+            }
+
+            .error{
+                color: red;
+                font-size: 15px;
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body bgcolor="aqua">
+
+        <form>
+            Name:<br><input type="text" name="name" id="name" placeholder="Enter your name" class="box">
+            <span id="nameerror" class="error"></span>
+            <br><br>
+
+            Age:<br><input type="number" id="age" placeholder="Age" class="box">
+            <span id="ageerror" class="error"></span>
+            <br><br>
+
+            Phone Number: <input type="number" id="number" class="box" placeholder="Enter valid mobile number">
+            <span id="numbererror" class="error"></span>
+            <br><br>
+
+            E-mail: <br>
+            <input type="email" id="mail"  placeholder="E-Mail" class="box">
+            <span id="emailerror" class="error"></span><br><br>
+
+            Date Of Birth:<br>
+            <input type="date" class="box"><br><br>
+
+            Country:<br>
+            <select name="" id="country" class="box">
+                <option value="Bharat">Bharat</option>
+                <option value="Russia">Russia</option>
+                <option value="America">America</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="China">China</option>
+            </select><br><br>
+            <input type="button" value="click me" id="btn" onclick="formvalidate()">
+        </form>
+        <p id="name1"></p>
+        <p id="age1"></p>
+        <p id="pn"></p>
+        <p id="mail1"></p>
+        <p id="country1"></p>
+    </body>
+    <script>
+        function formvalidate(){
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let number = document.getElementById("number").value;
+            let mail = document.getElementById("mail").value;
+            let atpos=mail.indexOf("@");
+            let dotpos=mail.indexOf(".");
+            let country = document.getElementById("country").value;
+
+            document.getElementById("name1").innerHTML= name;
+            document.getElementById("age1").innerHTML= age;
+            document.getElementById("pn").innerHTML= number;
+            document.getElementById("country1").innerHTML=country;
+            
+            if(name == "" || age == "" || number == "") {
+              alert("please enter all field");
+            }
+            if(number.length != 10) {
+              document.getElementById("numbererror").innerHTML="* please enter 10 digit number";
+              document.getElementById("pn").innerHTML="";
+            }
+            if(number.length==10){
+                document.getElementById("numbererror").innerHTML="";
+            }
+            if(mail=="" || atpos<3 || dotpos<atpos+4 || dotpos+4>mail.length){
+                document.getElementById("emailerror").innerHTML="*Not a valid e-mail";
+                return false;
+            }
+            else{
+                document.getElementById("mail1").innerHTML=mail;
+                document.getElementById("emailerror").innerHTML="";
+            }
+            // if(mail!="" || atpos>3 || dotpos>atpos+4 || dotpos+4<mail.length){
+            //     document.getElementById("emailerror").innerHTML="";
+            //     return false;
+            // }
+        }
+    </script>
+</html>

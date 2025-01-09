@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Form Race</title>
+        <link rel="stylesheet" href="form2.css">
+    </head>
+    <body bgcolor="antiquewhite">
+        <form action="">
+            Name : <br>
+            <input type="text" id="name" class="box" placeholder="Enter Name">
+            <span id="nameerror" class="error"></span><br><br>
+
+            E-mail : <br>
+            <input type="email" id="mail" class="box" placeholder="Enter E-mail">
+            <span id="mailerror"  class="error"></span><br><br>
+
+            Mobile-Number : <br>
+            <input type="number" id="mb" class="box" placeholder="Enter MobileNumber">
+            <span id="mberror" class="error"></span><br><br>
+
+            Gender : Male <input type="radio" id="male" value="male" name="gender">
+                    Female  <input type="radio" id="female" value="female" name="gender">
+            <span id="gendererror" class="error"></span><br><br>
+
+            Country : <br>
+            <select name="" id="country" class="box">
+                <option value="">Select country</option>
+                <option value="Bharat">Bharat</option>
+                <option value="Australia">Australia</option>
+                <option value="Russia">Russia</option>
+                <option value="America">America</option>
+            </select>
+            <span id="countryerror" class="error"></span><br><br>
+
+            <input type="button" onclick="validate()" value="Submit">
+            <input type="reset">    
+        </form>
+        <p id="name1"></p>
+        <p id="mail1"></p>
+        <p id="mb1"></p>
+        <p id="gender1"></p>
+        <p id="country1"></p>
+    </body>
+    <script src="form2.js"></script>
+</html>

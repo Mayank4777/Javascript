@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title> Form </title>
+    </head>
+    <body>
+        <form action="">
+            Name: 
+            <input type="text" id="name">
+            <span id="er1"> </span>
+            <br>
+            Number: 
+            <input type="number" id="number">
+            <span  id="er2"></span><br>
+            E-mail: 
+            <input type="email" id="email">
+            <span id="er3"></span><br>
+            password: 
+            <input type="password" id="pass">
+            <span id="er4"></span><br>
+            confirm password: 
+            <input type="password" id="cpass">
+            <span id="er5"></span><br>
+
+            <input type="button" value="submit" onclick="return validate()">
+        </form>
+        <p id="d1"></p>
+        <p id="d2"></p>
+        <p id="d3"></p>
+        <p id="d4"></p>
+        <p id="d5"></p>
+    </body>
+    <script>
+        function validate(){
+            let name=document.getElementById("name").value;
+            let num=document.getElementById("number").value;
+            let email=document.getElementById("email").value;
+            let pass=document.getElementById("pass").value;
+            let cpass=document.getElementById("cpass").value;
+
+            let  er1=document.getElementById("er1");
+            let  er2=document.getElementById("er2");
+            let  er3=document.getElementById("er3");
+            let  er4=document.getElementById("er4");
+            let  er5=document.getElementById("er5");
+
+            let  d1=document.getElementById("d1");
+            let  d2=document.getElementById("d2");
+            let  d3=document.getElementById("d3");
+            let  d4=document.getElementById("d4");
+            let  d5=document.getElementById("d5");
+
+            if(name==""||name.length<3){
+                er1.innerHTML="*Enter valid name";
+                d1.innerHTML="";
+            }
+            else{
+                er1.innerHTML="";
+                d1.innerHTML=name;
+            }
+            if(num==""||isNaN(num)||num.length!=1){
+                er2.innerHTML="*Invalid phone number";
+                d2.innerHTML="";
+            }
+            else{
+                er2.innerHTML="";
+                d2.innerHTML=num;
+            }
+            if(email==""||email.length<4){
+                er3.innerHTML="*Email is not complete.";
+                d3.innerHTML="";
+            }
+            else{
+                er3.innerHTML="";
+                d3.innerHTML=email;
+            }
+            if(pass==""||pass.length<3){
+                er4.innerHTML="*enter valid password"
+                d4.innerHTML="";
+            }
+            else{
+                er4.innerHTML="";
+                d4.innerHTML=pass;
+            }
+            if(cpass!==pass){
+                er5.innerHTML="Password doesnot match";
+                d5.innerHTML="";
+            }
+            else{
+                er5.innerHTML="";
+                d5.innerHTML=cpass;
+            }
+
+            if(er1.innerHTML !== "" || er2.innerHTML !== "" || er3.innerHTML !== "" || er4.innerHTML !== "" || er5.innerHTML !== "" ){
+                d1.innerHTML="";
+                d2.innerHTML="";
+                d3.innerHTML="";
+                d4.innerHTML="";
+                d5.innerHTML="";
+                return false;
+            }
+        }
+    </script>
+</html>

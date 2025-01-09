@@ -1,0 +1,19 @@
+form{
+    background-color: white;
+    margin: 50px;
+    padding: 20px;
+}
+
+.box{
+    height: 30px;
+    width: 70%;
+    margin:  auto;
+    background-color: lightgrey;
+    border: none;
+    border-radius: 5px;
+}
+
+.error{
+    color: red;
+    font-size: 13px;
+}
